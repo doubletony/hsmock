@@ -1,7 +1,7 @@
 
 var PlayerSet = function(user) {
 	this.hero = null;
-	this.cards = [];
+	this.cards = ['minion card', 'spell card', 'lucky coin'];
 	this.battlefiled = [];
 	this.mana = 0;
 	this.user = user;
@@ -11,8 +11,15 @@ var Game = function(){
 	this.playerSets = [new PlayerSet('Agana'), new PlayerSet('Bogada')];
 };
 
-PlayerSet.prototype.exectue = function(Game){
+PlayerSet.prototype.getCommand = function(game) {
+	for (var i = this.cards.length - 1; i >= 0; i--) {
+		console.log('Play card ' + this.cards[i]);
+	};
+}
+
+PlayerSet.prototype.exectue = function(game){
 	/* body... */
+	this.getCommand(game);
 };
 
 Game.prototype.isEnd = function () {
