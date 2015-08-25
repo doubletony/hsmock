@@ -1,13 +1,12 @@
-var defaultValue = function(arg, value) {
-	return typeof arg !== 'undefined' ?  arg : value;
-};
+var common = require('./common.js');
+var card = require('./card.js');
+var minion = require('./minion.js');
+var readlineSync = require('readline-sync');
 
-var Card = function(attack, health, cost, name) {
-	this.attack = defaultValue(attack, -1);
-	this.health = defaultValue(attack, -1);
-	this.cost = defaultValue(cost, -1);
-	this.name = defaultValue(name, '');
-};
+// Aliases
+var defaultValue = common.defaultValue;
+var Card = card.Card;
+var Minion = minion.Minion;
 
 var PlayerSet = function(user) {
 	this.hero = null;
@@ -19,13 +18,6 @@ var PlayerSet = function(user) {
 	this.user = user;
 };
 
-var readlineSync = require('readline-sync');
-
-var Minion = function(attack, health, name) {
-	this.attack = defaultValue(attack, -1);
-	this.health = defaultValue(health, -1); 
-	this.name = defaultValue(name, 'no name');
-};
 
 var Game = function(){
 	this.playerSets = [new PlayerSet('Agana'), new PlayerSet('Bogada')];

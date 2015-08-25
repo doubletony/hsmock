@@ -1,0 +1,9 @@
+﻿################################################################################
+# This .gitignore file was automatically created by Microsoft(R) Visual Studio.
+################################################################################
+
+*.suo
+*.dll
+/obj/Debug/hsmock.njsproj.FileListAbsolute.txt
+/obj/Debug/hsmock.njsprojResolveAssemblyReference.cache
+/.ntvs_analysis.dat
