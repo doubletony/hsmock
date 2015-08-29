@@ -10,9 +10,7 @@ var Minion = minion.Minion;
 
 var PlayerSet = function(user) {
 	this.hero = null;
-	this.cards = [new Card(1,1,1,'Minion 1'),
-		new Card(1,3,2,'Minion 2'),
-		new Card(0,4,1,'Minion 3')];
+	this.cards = [card.create('Minion 1'), card.create('Minion 2')];
 	this.battlefiled = [];
 	this.mana = 0;
 	this.user = user;

@@ -1,11 +1,22 @@
 ﻿var common = require('./common.js');
 var defaultValue = common.defaultValue;
 
+Card = function(cost, name) {
+    this.cost = defaultValue(cost, -1);
+    this.name = defaultValue(name, '');
+}
+
+CardService = function() {
+}
+
+CardService.prototype.CreateCard = function(name) {
+	return new Card(1, name);
+}
+
+var cardService = new CardService();
+
 module.exports = {
-    Card: function (attack, health, cost, name) {
-        this.attack = defaultValue(attack, -1);
-        this.health = defaultValue(attack, -1);
-        this.cost = defaultValue(cost, -1);
-        this.name = defaultValue(name, '');
-    }
+    create: cardService.CreateCard
 };
+
+		
