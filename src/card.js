@@ -6,6 +6,12 @@ Card = function(cost, name) {
     this.name = defaultValue(name, '');
 }
 
+MinionCard = function(cost, name) {
+	Card.call(this, cost, name);
+}
+
+MinionCard.prototype = new Card();
+
 CardService = function() {
 }
 
